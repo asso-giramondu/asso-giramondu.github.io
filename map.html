@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carte OpenStreetMap - Saint-Laurent-de-Terregatte</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 285px;
+            width: 485px; 
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script>
+        // Initialiser la carte et définir les coordonnées du centre et le niveau de zoom
+        var map = L.map('map').setView([48.571610, -1.258399], 6); // Coordonnées de la Mairie
+
+        // Ajouter le fond de carte OpenStreetMap
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 15,
+            attribution: '© OpenStreetMap contributors'
+        }).addTo(map);
+
+        // Ajouter un marqueur aux coordonnées spécifiées
+        var marker = L.marker([48.571610, -1.258399]).addTo(map);
+
+        // Ajouter une popup au marqueur
+        marker.bindPopup("<b>Saint-Laurent-de-Terregatte</b>").openPopup();
+    </script>
+</body>
+</html>
