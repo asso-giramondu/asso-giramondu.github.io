@@ -150,8 +150,8 @@ li.navbar_item {
   font-size: 1em;
   /*line-height: 30px;*/
   display: inline;
-  margin-left: 13px;
-  margin-right: 13px;
+  margin-left: 5px;
+  margin-right: 5px;
 }
 
 .current_item {
